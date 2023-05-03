@@ -1,15 +1,16 @@
 import random
 import threading
 
-global E 
-E = 100
-global x, y
+E, x, y = 100, None, None
+
 def func1():
+    global E, x, y # to change global variable inside a function
     while E > 1e-2:
         x = random.random()
         y = random.random()
         
 def func2():
+    global E, x, y # to change global variable inside a function
     while E > 1e-2:
         E = x**2 + y**2
         print(x, y, E)
